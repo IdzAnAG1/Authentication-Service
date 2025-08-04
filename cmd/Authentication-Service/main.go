@@ -4,6 +4,7 @@ import (
 	"AythService/internal/config"
 	"flag"
 	"fmt"
+	"os"
 )
 
 func main() {
@@ -13,6 +14,10 @@ func main() {
 	if configPath == "" {
 		panic("-set-config flag is required")
 	}
-	cfg := config.MustLoadConfig(configPath)
+	cfg, err := config.LoadConfig(configPath)
+	if err != nil {
+		fmt.Printf("Error defining the config : %v\n", err)
+		os.Exit(1)
+	}
 	fmt.Printf("Config loaded: %+v\n", cfg)
 }
