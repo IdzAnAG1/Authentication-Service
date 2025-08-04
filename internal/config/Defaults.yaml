@@ -1,6 +1,6 @@
-Server:
+GRPC:
   Port: 8080
-  Interval: 250
+  Interval: 5s
 
 Logger:
   Level: "Dev"

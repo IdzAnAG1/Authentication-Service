@@ -2,19 +2,13 @@ package main
 
 import (
 	"AythService/internal/config"
-	"flag"
 	"fmt"
 	"os"
 )
 
 func main() {
-	var configPath string
-	flag.StringVar(&configPath, "set-config", "", "Path to configuration file")
-	flag.Parse()
-	if configPath == "" {
-		panic("-set-config flag is required")
-	}
-	cfg, err := config.LoadConfig(configPath)
+
+	cfg, err := config.LoadConfig()
 	if err != nil {
 		fmt.Printf("Error defining the config : %v\n", err)
 		os.Exit(1)
