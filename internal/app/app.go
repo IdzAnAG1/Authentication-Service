@@ -1,12 +1,22 @@
 package app
 
-type AuthenticationService struct {
+import (
+	gRPCapp "AuthService/internal/app/grpc"
+	"log/slog"
+	"time"
+)
+
+type App struct {
+	GRPCSrv *gRPCapp.App
 }
 
-func NewAuthenticationService() AuthenticationService {
-	return AuthenticationService{}
-}
+func New(logger *slog.Logger, grpcPort int, storagePath string, tokenTTL time.Duration) *App {
+	// TODO: Инициализировать хранилище
+	// TODO: Инициализировать Auth Service
+	// TODO: Инициализировать Auth Service
+	grpcApp := gRPCapp.New(logger, grpcPort)
 
-func (as *AuthenticationService) Launch() {
-	
+	return &App{
+		GRPCSrv: grpcApp,
+	}
 }

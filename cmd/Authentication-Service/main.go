@@ -1,7 +1,9 @@
 package main
 
 import (
-	"AythService/internal/config"
+	"AuthService/internal/app"
+	"AuthService/internal/config"
+	"AuthService/internal/logger"
 	"fmt"
 	"os"
 )
@@ -14,4 +16,14 @@ func main() {
 		os.Exit(1)
 	}
 	fmt.Printf("Config loaded: %+v\n", cfg)
+	log := logger.SetupLogger(cfg.Logger.Level)
+	log.Info("Logger is Activate")
+
+	application := app.New(
+		log,
+		cfg.GRPCServer.Port,
+		cfg.Storage.Path,
+		cfg.GRPCServer.Interval)
+
+	application.GRPCSrv.MustRun()
 }

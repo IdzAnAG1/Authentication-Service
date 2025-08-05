@@ -20,6 +20,9 @@ type Config struct {
 		Port     int           `mapstructure:"Port" validate:"required,min=200,max=65535"`
 		Interval time.Duration `mapstructure:"Interval" validate:"required,min=1,max=99999"`
 	} `mapstructure:"GRPC"`
+	Storage struct {
+		Path string `mapstructure:"Path"`
+	} `mapstructure:"Storage"`
 	Logger struct {
 		Level string `mapstructure:"Level"`
 	} `mapstructure:"Logger"`

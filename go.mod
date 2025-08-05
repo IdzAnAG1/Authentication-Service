@@ -1,14 +1,16 @@
-module AythService
+module AuthService
 
 go 1.24.4
 
 require (
+	github.com/IdzAnAG1/Microservice_first v0.0.0-20250804195500-69329add3bb3
 	github.com/go-playground/validator/v10 v10.27.0
 	github.com/spf13/viper v1.20.1
+	golang.org/x/net v0.42.0
+	google.golang.org/grpc v1.74.2
 )
 
 require (
-	github.com/IdzAnAG1/Microservice_first v0.0.0-20250804195500-69329add3bb3 // indirect
 	github.com/fsnotify/fsnotify v1.8.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.8 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
@@ -24,11 +26,9 @@ require (
 	github.com/subosito/gotenv v1.6.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/crypto v0.40.0 // indirect
-	golang.org/x/net v0.42.0 // indirect
 	golang.org/x/sys v0.34.0 // indirect
 	golang.org/x/text v0.27.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250804133106-a7a43d27e69b // indirect
-	google.golang.org/grpc v1.74.2 // indirect
 	google.golang.org/protobuf v1.36.6 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
